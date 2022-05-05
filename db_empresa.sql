@@ -21,6 +21,10 @@ SET time_zone = "+00:00";
 -- Banco de dados: `db_empresa`
 --
 
+CREATE DATABASE `db_empresa`;
+
+USE `db_empresa`;
+
 -- --------------------------------------------------------
 
 --
@@ -36,13 +40,6 @@ CREATE TABLE `tb_empresa` (
   `email_empresa` varchar(75) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `tb_empresa`
---
-
-INSERT INTO `tb_empresa` (`cod_empresa`, `nome_empresa`, `telefone_empresa`, `descricao_empresa`, `cod_user_fk`, `email_empresa`) VALUES
-(2, 'mizunoteste', '(11) 11111-1111', 'Mizuno é uma empresa de tenis beeem confortáveis', 2, 'mi@zuno');
-
 -- --------------------------------------------------------
 
 --
@@ -55,14 +52,6 @@ CREATE TABLE `tb_usuario` (
   `email_user` varchar(75) NOT NULL,
   `senha_user` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `tb_usuario`
---
-
-INSERT INTO `tb_usuario` (`cod_user`, `nome_user`, `email_user`, `senha_user`) VALUES
-(1, 'nikeADM', 'nike.adm@gmail.com', '$2y$10$OflfE2NBN0a.jRMot1qCxOjCR4aOBhNRo7uiwtaQhuxkJGqyEqRni'),
-(2, 'mizunoADM', 'mizuno.adm@gmail.com', '$2y$10$16r4dIyEcS5L0E3AvlFmS.exZvxckw.EcvhW6RIn/ycn.f0NOI14O');
 
 --
 -- Índices para tabelas despejadas
