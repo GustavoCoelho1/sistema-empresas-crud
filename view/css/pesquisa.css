@@ -1,0 +1,101 @@
+#div_resultado {
+    display: none;
+    opacity: 0;
+}
+
+.psq_tituloPsq {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.psq_pesquisaLyt {
+    margin-top: 1rem;
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.psq_pesquisa {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 300 !important;
+    text-align: center;
+}
+
+.psq_iconPsq {
+    position: absolute;
+    display: flex;
+
+    width: 48px;
+    margin-left: 1px;
+
+    background-color: white;
+    border-right: 1px solid #ced4da;
+    cursor: pointer;
+}
+
+.psq_iconPsq img {
+    margin-left: 1rem;
+    height: 15px;
+    width: 15px;
+}
+
+.psq_tituloRst {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.psq_tituloRst h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.psq_tituloRst h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.psq_rstBorder {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+}
+
+.psq_rstLyt {
+    width: 100%;
+    padding-top: 0;
+    align-items: center;
+    justify-content: center;
+    overflow-x: scroll;
+}
+
+.psq_rstLyt h1{
+    margin-top: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.idx_button {
+    margin-top: 2rem;
+}
+
+thead th {
+    padding: 0.75rem !important;
+    padding-left: 0.5rem !important;
+}
+
+tbody td, tbody th {
+    line-height: 40px;
+}
+
+tbody th {
+    text-align: center;
+}
+

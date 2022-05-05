@@ -1,0 +1,138 @@
+.modal-content {
+    border-radius: 1.5rem !important;
+    box-shadow: 0px 0px 14px 6px white !important;
+    border: none !important;
+}
+
+.modal-header {
+    width: 100% !important;
+}
+
+b {
+    font-weight: 400;
+}
+
+.mdl_lyt {
+    background-color: white;
+    padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mdl_lyt section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#div_Load {
+    margin: 2rem;
+}
+
+#div_Content {
+    display: none;
+    opacity: 0;
+}
+
+.mdl_titulo {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.mdl_titulo b{
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: rgb(190, 190, 190);
+}
+
+.mdl_msgConfirmacao {
+    font-weight: 300;
+    margin: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+
+    display: none;
+    opacity: 0;
+
+    transition: 0.8s ease;
+}
+
+.mdl_msgAlterar {
+    padding: 1rem;
+
+    transition: 0.8s ease;
+}
+
+.mdl_msgDelete {
+    width: fit-content;
+    padding: 2rem;
+    padding-top: 0.75rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 2rem;
+}
+
+.mdl_msgDelete div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mdl_msgDelete div span{
+    width: 100%;
+    border-bottom: 2px solid black;
+    padding: 1rem;
+}
+
+.mdl_msgDelete div:first-child {
+    width: 100px;
+    font-weight: 400;
+    justify-content: flex-end;
+}
+
+.mdl_msgDelete div:last-child {
+    width: fit-content;
+    font-weight: 300;
+    justify-content: flex-start;
+}
+
+.mdl_buttons {
+    width: 100%;
+    padding: 1rem;
+
+    display: none;
+    opacity: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.8s ease;
+}
+
+.mdl_lyt .cad_msg {
+    display: none;
+    padding: 1rem;
+}
+
+.idx_button.psq {
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.idx_button.psq:first-child{
+    margin-right: 1rem;
+}
