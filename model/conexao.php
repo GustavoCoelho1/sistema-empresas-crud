@@ -10,6 +10,7 @@
 
         function conectar()
         {
+            //Altere com os seus dados
             $hostname = "localhost";
             $username = "root";
             $password = "";

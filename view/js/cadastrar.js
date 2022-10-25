@@ -53,7 +53,7 @@ $(document).ready(() => {
                     $('#div_Usuario').hide();
                     $('#spn_titulo').hide();
 
-                    if(resposta['resultado'] != false)
+                    if(resposta['resultado'] != false && resposta['resultado'] != null)
                     {
                         $('#div_Msg ion-icon').attr('name', 'checkmark-outline');
                         $('#div_Msg span').html('Cadastro realizado com sucesso!');

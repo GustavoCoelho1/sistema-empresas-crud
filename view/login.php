@@ -14,7 +14,7 @@
 <body id="pg_login">
    <main>
        <div class="idx_lyt">
-            <span id="spn_titulo" class="cad_titulo">Login</span>
+            <span id="spn_titulo" class="cad_titulo">Login de Usuário</span>
 
             <section id="div_Login">
                 <form id="frm_Login" class="lgn_login">
@@ -25,7 +25,7 @@
 
                     <div class="cad_campo">
                         <label for="txt_Nome" class="form-label">Senha</label>
-                        <input type="password" class="form-control campo" id="txt_Senha" name="txt_Senha" placeholder="Insira o endereço a senha cadastrado">
+                        <input type="password" class="form-control campo" id="txt_Senha" name="txt_Senha" placeholder="Insira a senha cadastrada">
                     </div>
 
                     <div class="cad_campo">
