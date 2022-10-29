@@ -23,11 +23,10 @@
 }
 
 #pg_cadastro .cad_usuario {
-    display: none;
-    opacity: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .cad_empresa .cad_campo:last-child {

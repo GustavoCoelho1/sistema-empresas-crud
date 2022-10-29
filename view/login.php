@@ -1,3 +1,5 @@
+<?php include_once("../model/conexao.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +14,14 @@
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body id="pg_login">
+    <?php 
+        $c = new Conexao();
+        $conexaoValida = $c -> validarConexao();
+    ?>
+
+    <script>
+        alert("<?php echo ($conexaoValida) ?  'Conexão com o banco de dados OK!' : 'Conexao com o banco de dados falhou! :C'?>");
+    </script>
    <main>
        <div class="idx_lyt">
             <span id="spn_titulo" class="cad_titulo">Login de Usuário</span>
