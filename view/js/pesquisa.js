@@ -148,6 +148,7 @@ function pesquisar(e)
                 contentType: false
             }).done((resultado) => {
                 let pesquisa = JSON.parse(resultado);
+                const userCod = $("#codUser").val();
 
                 $('#div_pesquisa').css('opacity', '0');
 
@@ -162,26 +163,43 @@ function pesquisar(e)
                     if(pesquisa.length > 0)
                     {
                         pesquisa.forEach(empresa => {
-                            $('#tb_empresas').append(`
+                            const conteudoProprietario = `
                                 <tr>
                                     <th>${empresa['Código']}</th>
                                     <td>${empresa['Nome']}</td>
                                     <td>${empresa['Email']}</td>
                                     <td>${empresa['Telefone']}</td>
+                                    <td style="text-align: center">${empresa['Proprietário']}</td>
                                     <th><button type="button" class="btn btn-warning btnAlt" data-bs-toggle="modal" data-bs-target="#mdl_AltDelete" data-codigo="${empresa['Código']}">Alterar</button></th>
                                     <th><button type="button" class="btn btn-danger btnDel" data-bs-toggle="modal" data-bs-target="#mdl_AltDelete" data-codigo="${empresa['Código']}">Deletar</button></th>
                                 </tr>
-                            `)
+                            `;
+
+                            const conteudoNaoProprietario = `
+                                <tr>
+                                    <th>${empresa['Código']}</th>
+                                    <td>${empresa['Nome']}</td>
+                                    <td>${empresa['Email']}</td>
+                                    <td>${empresa['Telefone']}</td>
+                                    <td style="text-align: center">${empresa['Proprietário']}</td>
+                                    <th><button type="button" class="btn btn-secondary blockedButton">Alterar</button></th>
+                                    <th><button type="button" class="btn btn-secondary blockedButton">Deletar</button></th>
+                                </tr>
+                            `;
+
+                            (empresa['Proprietário'] == userCod) ? $('#tb_empresas').append(conteudoProprietario) :  $('#tb_empresas').append(conteudoNaoProprietario);
                         });
 
-                        $(".btnAlt").on('click', (e) => btnAlterarClick(e))
+                        $(".blockedButton").on("click", () => alert("⚠ Atenção: Para modificar uma empresa você deve ser o Proprietário dela!"));
 
-                        $(".btnDel").on('click', (e) => btnDeletarClick(e))
+                        $(".btnAlt").on('click', (e) => btnAlterarClick(e));
+
+                        $(".btnDel").on('click', (e) => btnDeletarClick(e));
                     }
                     else
                     {
                         $('#tb_empresas').css('display', 'table-caption');
-                        $('#tb_empresas').append('<h1>Sem resultados!</h1>')
+                        $('#tb_empresas').append('<h1>Sem resultados!</h1>');
                     }
 
                     $("#div_resultado").css('display', 'flex');

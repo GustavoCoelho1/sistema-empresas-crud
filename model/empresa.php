@@ -21,7 +21,8 @@
                         nome_empresa as 'Nome',
                         email_empresa as 'Email',
                         telefone_empresa as 'Telefone',
-                        descricao_empresa as 'Descrição'
+                        descricao_empresa as 'Descrição',
+                        cod_user_fk as 'Proprietário'
                     FROM tb_empresa WHERE nome_empresa LIKE '%{$pesquisa}%'
                 ");
 
@@ -34,7 +35,8 @@
                         "Nome" => $info["Nome"],
                         "Email" => $info["Email"],
                         "Telefone" => $info["Telefone"],
-                        "Descrição" => $info["Descrição"]
+                        "Descrição" => $info["Descrição"],
+                        "Proprietário" => $info["Proprietário"]
                     );
                 };
 
@@ -60,7 +62,8 @@
                         nome_empresa as 'Nome',
                         email_empresa as 'Email',
                         telefone_empresa as 'Telefone',
-                        descricao_empresa as 'Descrição'
+                        descricao_empresa as 'Descrição',
+                        cod_user_fk as 'Proprietário'
                     FROM tb_empresa WHERE cod_empresa = {$pesquisa}
                 ");
 
@@ -71,6 +74,45 @@
             else 
             {
                 echo false;
+            }
+        }
+
+        function cadastrarEmpresa() {
+            $conexao = $this -> get_conexao();
+
+            $conexao -> autocommit(false);
+            $conexao -> begin_transaction();
+            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+            try {
+                //Empresa
+                $nomeEmpresa = $_POST['txt_NomeEmpresa'];
+                $emailEmpresa = $_POST['txt_EmailEmpresa'];
+                $telefone = $_POST['txt_Telefone'];
+                $desc = $_POST['txt_Descricao'];
+                $codUser = $_POST['codUser'];
+
+                $query = $conexao -> query(
+                    "INSERT INTO tb_empresa(nome_empresa, email_empresa, telefone_empresa, descricao_empresa, cod_user_fk)
+                    VALUES(
+                        '{$nomeEmpresa}',
+                        '{$emailEmpresa}',
+                        '{$telefone}',
+                        '{$desc}',
+                        '{$codUser}'
+                    )"
+                );
+
+                $resultado = ($query) ? $conexao -> commit() : false;
+
+                $resposta = array("resultado" => $resultado);
+
+                echo json_encode($resposta);
+            }
+            catch (mysqli_sql_exception $exception)
+            {
+                $conexao -> rollback();
+                throw $exception;
             }
         }
 

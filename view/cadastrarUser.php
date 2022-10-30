@@ -13,8 +13,6 @@
 </head>
 <body id="pg_cadastro">
     <main>
-        <?php include_once('navBar.php') ?>
-
         <div class="idx_lyt">
             <span id="spn_titulo" class="cad_titulo">Cadastrar-se</span>
 

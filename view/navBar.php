@@ -15,7 +15,7 @@
             <ul class="nav_list">
                 <li><a href="index.php">Início</a></li>
                 <li><a href="pesquisa.php">Pesquisar</a></li>
-                <li><a href="cadastro.php">Cadastrar</a></li>
+                <li><a href="cadastrarEmpresa.php">Cadastrar</a></li>
                 <li><a href="../controller/logout.php">Sair</a></li>
             </ul>
 

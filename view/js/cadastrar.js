@@ -1,26 +1,8 @@
 $(document).ready(() => {
-    let frmUser = $("#frm_Usuario");
-    let frmEmpresa = $("#frm_Empresa");
-
-    $('#btn_Proximo').on('click', () => {
-        if (validarForm(frmEmpresa.attr('id')))
-        {
-            $('#div_Empresa').css('opacity', '0');
-
-            setTimeout(() => {
-                $('#div_Empresa').hide();
-                $('#div_Usuario').css('display', 'flex');
-                setTimeout(() => {$('#div_Usuario').css('opacity', '1');}, 300)
-            }, 800);
-        }
-        else
-        {
-            alert('Preencha todos os campos para prosseguir!');
-        }
-    });
+    const form = (window.location.pathname.includes("cadastrarUser.php")) ? $("#frm_Usuario") : $("#frm_Empresa");
 
     $('#btn_Submit').on('click', () => {
-        if (validarForm(frmUser.attr('id')))
+        if (validarForm(form.attr('id')))
         {
             $('#btn_Submit').html(`
                 <div class="spinner-border text-light" role="status">
@@ -36,8 +18,10 @@ $(document).ready(() => {
                 mainForm.append(campo.name, campo.value);
             })
 
+            const url = (window.location.pathname.includes("cadastrarUser.php")) ? "../controller/cadastrarUser.php" : "../controller/cadastrarEmpresa.php";
+
             $.ajax({
-                url: '../controller/cadastrar.php',
+                url,
                 type: 'POST',
                 data: mainForm,
                 processData: false,
@@ -46,11 +30,11 @@ $(document).ready(() => {
             .done((resultado) => {
                 let resposta = JSON.parse(resultado);
 
-                $('#div_Usuario').css('opacity', '0');
+                form.parent().css('opacity', '0');
                 $('#spn_titulo').css('opacity', '0');
 
                 setTimeout(() => {
-                    $('#div_Usuario').hide();
+                    form.parent().hide();
                     $('#spn_titulo').hide();
 
                     if(resposta['resultado'] != false && resposta['resultado'] != null)
@@ -59,7 +43,9 @@ $(document).ready(() => {
                         $('#div_Msg span').html('Cadastro realizado com sucesso!');
 
                         setTimeout(() => {
-                            window.location.replace("login.php");
+                            const nextPage = (window.location.pathname.includes("cadastrarUser.php")) ? "login.php" : "index.php";
+
+                            window.location.replace(nextPage)
                         }, 3000)
                     }
                     else

@@ -1,3 +1,5 @@
+<?php include_once('validarLogin.inc') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +15,10 @@
 </head>
 <body id="pg_cadastro">
     <main>
+        <?php include_once('navBar.php') ?>
+
         <div class="idx_lyt">
-            <span id="spn_titulo" class="cad_titulo">Cadastrar-se</span>
+            <span id="spn_titulo" class="cad_titulo">Cadastrar Empresa</span>
 
             <section class="cad_empresa" id="div_Empresa">
                 <form id="frm_Empresa" class="row g-3">
@@ -38,11 +42,18 @@
                         <textarea class="form-control campo" id="txt_Descricao" name="txt_Descricao" placeholder="Descrição da Empresa" required></textarea>
                     </div>
 
+                    <input class="campo" type="hidden" name="codUser" value="<?=$_SESSION['cod_user']?>">
+
                     <div class="col-12 cad_campo">
-                        <button type="button" class="idx_button" id="btn_Proximo">Próximo</button>
+                        <button type="button" class="idx_button" id="btn_Submit">Cadastrar</button>
                     </div>
                 </form>
             </section>
+
+            <section class="cad_msg" id="div_Msg">
+                <ion-icon name=""></ion-icon>
+                <span></span>
+            </section> 
         </div>
     </main>
 

@@ -27,6 +27,7 @@
                 <div class="psq_pesquisaLyt">
                     <div class="psq_iconPsq" id="btn_InptPesquisar"><img src="img/pesq-icon.jpg" alt=""></div>
                     <input class="psq_pesquisa form-control" type="text" name="txt_Pesquisa" id="txt_Pesquisa">
+                    <input type="hidden" id="codUser" value="<?=$_SESSION['cod_user']?>">
                 </div>
 
                 <button type="button" class="idx_button" id="btn_Pesquisar">Pesquisar</button>
@@ -47,6 +48,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">E-mail</th>
                                     <th scope="col">Telefone</th>
+                                    <th scope="col">Proprietário</th>
                                     <th style="text-align: center" scope="col">Alterar</th>
                                     <th style="text-align: center" scope="col">Deletar</th>
                                 </tr>

@@ -76,7 +76,7 @@
             header('Location: ../view/login.php');
         }
 
-        function cadastrar()
+        function cadastrarUsuario()
         {
             $conexao = $this -> get_conexao();
 
@@ -86,12 +86,6 @@
 
             try
             {
-                //Empresa
-                $nomeEmpresa = $_POST['txt_NomeEmpresa'];
-                $emailEmpresa = $_POST['txt_EmailEmpresa'];
-                $telefone = $_POST['txt_Telefone'];
-                $desc = $_POST['txt_Descricao'];
-
                 //Usuário
                 $nomeUser = $_POST['txt_NomeUser'];
                 $emailUser = $_POST['txt_EmailUser'];
@@ -100,7 +94,7 @@
                 $opcao = ['cos' => 8];
                 $senhaC = password_hash($senha, PASSWORD_BCRYPT, $opcao);
 
-                $resultado1 = $conexao -> query(
+                $query = $conexao -> query(
                     "INSERT INTO tb_usuario(nome_user, email_user, senha_user)
                     VALUES(
                         '{$nomeUser}',
@@ -109,20 +103,7 @@
                     )"
                 );
 
-                $codUser = $conexao -> insert_id;
-
-                $resultado2 = $conexao -> query(
-                    "INSERT INTO tb_empresa(nome_empresa, email_empresa, telefone_empresa, descricao_empresa, cod_user_fk)
-                    VALUES(
-                        '{$nomeEmpresa}',
-                        '{$emailEmpresa}',
-                        '{$telefone}',
-                        '{$desc}',
-                        '{$codUser}'
-                    )"
-                );
-
-                $resultado = ($resultado1 && $resultado2) ? $conexao -> commit() : false;
+                $resultado = ($query) ? $conexao -> commit() : false;
 
                 $resposta = array("resultado" => $resultado);
 

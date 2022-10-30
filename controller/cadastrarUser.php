@@ -3,5 +3,5 @@
 
     $user = new Usuario();
 
-    $user -> cadastrar();
+    $user -> cadastrarUsuario();
 ?>

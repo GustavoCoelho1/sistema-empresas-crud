@@ -68,6 +68,7 @@ $(document).ready(() => {
             $("#div_Msg").css('display', 'none');
             $("#div_Login").css('display', 'flex');
             $("#spn_titulo").show();
+            $("#spn_titulo").css('opacity', '1');
 
             setTimeout(() => { $('#div_Login').css('opacity', '1'); }, 300);
         }, 800)

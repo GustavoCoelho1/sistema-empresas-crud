@@ -42,7 +42,7 @@
                         <button type="button" class="idx_button" id="btn_Submit">Enviar</button>
                     </div>
 
-                    <span class="cad_link">Ainda não possui cadastro? Faça-o <a href="cadastro.php">clicando aqui</a></span>
+                    <span class="cad_link">Ainda não possui cadastro? Faça-o <a href="cadastrarUser.php">clicando aqui</a></span>
                 </form>
             </section>
 
