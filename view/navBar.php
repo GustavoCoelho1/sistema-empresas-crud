@@ -23,8 +23,15 @@ $user = $u->pesquisarCodigo($_SESSION['cod_user']);
             <span class="nav_nomeUser"><?= $user['Nome'] ?></span>
             <ion-icon name="person-circle-outline"></ion-icon>
         </div>
+
+        <div class="mobile_menu">
+            <div class="line_1"></div>
+            <div class="line_2"></div>
+            <div class="line_3"></div>
+        </div>
     </nav>
 
+    <script src="js/navbar.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </header>

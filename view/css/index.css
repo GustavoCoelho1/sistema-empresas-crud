@@ -51,6 +51,7 @@ input:-webkit-autofill:active{
 }
 
 .idx_titulo {
+    text-align: center;
     font-weight: 300;
 }
 

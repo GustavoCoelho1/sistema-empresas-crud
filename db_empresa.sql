@@ -21,9 +21,7 @@ SET time_zone = "+00:00";
 -- Banco de dados: `db_empresa`
 --
 
-CREATE DATABASE `db_empresa`;
-
-USE `db_empresa`;
+USE `id20131009_db_empresa`;
 
 -- --------------------------------------------------------
 
